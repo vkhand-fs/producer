@@ -3,8 +3,10 @@
    
    **zookeeper-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\zookeeper.properties**
 2. Start the Kafka server and make sure it is running at port : 9092
-   **kafka-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\server.properties**
+   
+   **kafka-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\server.properties**
 3. Create the topic -  fixedincome.trades.data
+   
    **kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic fixedincome.trades.data**
 
 4. Start the 'Provider' Microservice and make sure it is running at port : 9081
@@ -12,6 +14,7 @@
 5. Start the Consumer Microservice and make sure it is running at port : 9082
 
 6. Launch PostMan and hit the POST url provided by 'Provider' MS. This should publish the trade deals into Kafka topic
+
 **POST localhost:9081/fixed-income/trades**
     
     **Headers**
@@ -28,6 +31,7 @@
     }
 
 7. Launch PostMan and hit the GET url provided by 'Consumer' MS. This MS is subscribed to the topic and should get all the trade statistics.
+
 **GET - localhost:9082/fixed-income/trades/stats**
 
     **Sample Output**
@@ -65,9 +69,11 @@
     }
 
 **GET - localhost:9082/fixed-income/trades** 
+
 This should return all the trades that are published into the topic
 
 **Sample output**
+
 {
     "trades": [
         {
