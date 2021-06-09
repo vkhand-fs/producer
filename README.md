@@ -1,6 +1,7 @@
 # Instructions
 1. Start the  Zookeeper  and make sure it is running at port : 2181.
-   **zookeeper-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\zookeeper.properties**
+   
+   **zookeeper-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\zookeeper.properties**
 2. Start the Kafka server and make sure it is running at port : 9092
    **kafka-server-start.bat C:\Vinay\kb\kafka_2.12-2.8.0\config\server.properties**
 3. Create the topic -  fixedincome.trades.data
